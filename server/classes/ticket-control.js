@@ -44,15 +44,21 @@ class TicketControl {
         return `Ticket: ${this.ultimo} `;
     }
 
+
+    getUltimos4(){
+
+        return this.ultimos4;
+    }
+
     atenderTicket(escritorio){
-        if(this.tickets.length ===0){
+        if(this.tickets.length === 0){
             return 'no hay tickets';
         }
 
-        let numero = this.tickets[0].numero;
+        let numeroTicket = this.tickets[0].numero;
         this.tickets.shift();
 
-        let atenderTicket = new Ticket(numeroTIcket, escritorio);
+        let atenderTicket = new Ticket(numeroTicket, escritorio);
         this.ultimos4.unshift(atenderTicket);
 
         if(this.ultimos4.length > 4){
